@@ -78,3 +78,7 @@ async def main():
 # Tests
 
 - `pytest tests`
+
+# Additional
+
+Inspired by `https://github.com/SamWarden/didiator`
