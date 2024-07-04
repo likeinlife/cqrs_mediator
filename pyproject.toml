@@ -7,7 +7,6 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-backoff = "^2.2.1"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.10.1"
