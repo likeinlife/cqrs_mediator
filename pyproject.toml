@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mediator"
-version = "0.1.0"
+version = "0.1.1"
 description = "Mediator pattern impl"
 authors = ["likeinlife <likeinlife@outlook.com>"]
 readme = "README.md"

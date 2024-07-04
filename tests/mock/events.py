@@ -11,7 +11,7 @@ class IntEvent(Event):
 
 
 @dataclass
-class IntEventHandler(IEventHandler[IntEvent, None]):
+class IntEventHandler(IEventHandler[IntEvent]):
     state: State
 
     async def __call__(self, request: IntEvent) -> None:  # noqa: ARG002
