@@ -1,0 +1,76 @@
+[tool.poetry]
+name = "mediator"
+version = "0.1.0"
+description = "Mediator pattern impl"
+authors = ["likeinlife <likeinlife@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+backoff = "^2.2.1"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.10.1"
+ruff = "^0.5.0"
+pre-commit = "^3.7.1"
+
+
+[tool.poetry.group.test.dependencies]
+pytest-asyncio = "^0.23.7"
+pytest = "^8.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    # Allow boolean type in func arguments
+    "FBT001",
+    # Allow PEP585 annotations like dict[str, str] 
+    "FA102",
+    # No blankline before class
+    "D203",
+    # Multiline string summary should start at the first line
+    "D213",
+    # Allow no-typehints
+    "ANN101",
+    "ANN102",
+    # Disable doc-string rules
+    "D100",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D107",
+    "D407",
+    "D406",
+    # Allow type: ignore
+    "PGH003",
+    # Useless
+    "FBT",
+    "FA100",
+    "B904",
+    "COM812",
+    "TD003",
+    "FIX002",
+    "ANN401",
+]
+exclude = []
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"tests/**/*.py" = ["D", "S", "ANN", "PLR"]
+
+[tool.mypy]
+ignore_missing_imports = true
+follow_imports = "normal"
+
+[tool.pytest.ini_options]
+pythonpath = "mediator"
+asyncio_mode = "auto"
