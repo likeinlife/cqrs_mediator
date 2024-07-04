@@ -81,4 +81,4 @@ async def main():
 
 # Additional
 
-Inspired by `https://github.com/SamWarden/didiator`
+Inspired by [didator](https://github.com/SamWarden/didiator)
