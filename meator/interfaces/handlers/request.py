@@ -1,7 +1,7 @@
 import abc
 import typing as tp
 
-from mediator.entities import Request
+from meator.entities import Request
 
 HRes = tp.TypeVar("HRes")
 RType = tp.TypeVar("RType", bound=Request)

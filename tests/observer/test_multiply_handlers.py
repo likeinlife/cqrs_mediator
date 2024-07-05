@@ -1,6 +1,6 @@
 import random
 
-from mediator.observers import EventObserverImpl
+from meator.observers import EventObserverImpl
 from tests.mock.events import IntEvent, IntEventHandler
 from tests.mock.state import State
 

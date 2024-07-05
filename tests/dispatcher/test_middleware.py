@@ -1,6 +1,6 @@
 import random
 
-from mediator.dispatchers import CommandDispatcherImpl
+from meator.dispatchers import CommandDispatcherImpl
 from tests.mock.commands import IntCommand, IntCommandHandler
 from tests.mock.middleware import StateChangerMiddleware
 from tests.mock.state import State

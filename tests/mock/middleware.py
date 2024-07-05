@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from mediator.entities.request import Request
-from mediator.middlewares.base import Middleware
+from meator.entities.request import Request
+from meator.middlewares.base import Middleware
 from tests.mock.state import State
 
 

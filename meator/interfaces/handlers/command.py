@@ -1,6 +1,6 @@
 import typing as tp
 
-from mediator.entities import Command
+from meator.entities import Command
 
 from .request import IHandler
 

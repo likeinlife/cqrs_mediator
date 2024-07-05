@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from mediator.entities import Request
-from mediator.errors import BaseError
+from meator.entities import Request
+from meator.errors import BaseError
 
 
 class DispatcherError(BaseError): ...

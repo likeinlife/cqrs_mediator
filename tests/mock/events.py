@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from mediator.entities import Event
-from mediator.interfaces.handlers import IEventHandler
+from meator.entities import Event
+from meator.interfaces.handlers import IEventHandler
 from tests.mock.state import State
 
 

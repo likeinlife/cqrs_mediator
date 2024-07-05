@@ -1,7 +1,7 @@
 import pytest
 
-from mediator.dispatchers import CommandDispatcherImpl
-from mediator.dispatchers.errors import HandlerNotFoundError
+from meator.dispatchers import CommandDispatcherImpl
+from meator.dispatchers.errors import HandlerNotFoundError
 from tests.mock.commands import IntCommand
 
 

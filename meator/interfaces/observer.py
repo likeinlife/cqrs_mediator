@@ -1,8 +1,8 @@
 import abc
 import typing as tp
 
-from mediator.entities import Request
-from mediator.interfaces.handlers.request import IHandler
+from meator.entities import Request
+from meator.interfaces.handlers.request import IHandler
 
 Res = tp.TypeVar("Res")
 Req = tp.TypeVar("Req", bound=Request)

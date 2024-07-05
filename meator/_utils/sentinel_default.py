@@ -1,6 +1,6 @@
 import typing as tp
 
-from mediator._constants import _sentinel
+from meator._constants import _sentinel
 
 T = tp.TypeVar("T")
 

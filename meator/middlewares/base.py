@@ -1,8 +1,8 @@
 import typing as tp
 
-from mediator.entities.request import Request
-from mediator.interfaces.middleware import IMiddleware
-from mediator.interfaces.types import CallNextType
+from meator.entities.request import Request
+from meator.interfaces.middleware import IMiddleware
+from meator.interfaces.types import CallNextType
 
 Res = tp.TypeVar("Res")
 

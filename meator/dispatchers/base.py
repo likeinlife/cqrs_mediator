@@ -1,14 +1,14 @@
 import typing as tp
 from typing import TypeVar
 
-from mediator._constants import _sentinel
-from mediator._utils.sentinel_default import get_default_sentinel
-from mediator.dispatchers.errors import HandlerNotFoundError
-from mediator.entities.request import Request
-from mediator.interfaces.dispatcher import IDispatcher
-from mediator.interfaces.handlers.request import IHandler
-from mediator.middlewares import wrap_handler
-from mediator.middlewares.base import Middleware
+from meator._constants import _sentinel
+from meator._utils.sentinel_default import get_default_sentinel
+from meator.dispatchers.errors import HandlerNotFoundError
+from meator.entities.request import Request
+from meator.interfaces.dispatcher import IDispatcher
+from meator.interfaces.handlers.request import IHandler
+from meator.middlewares import wrap_handler
+from meator.middlewares.base import Middleware
 
 Res = TypeVar("Res")
 RType = TypeVar("RType", bound=Request)

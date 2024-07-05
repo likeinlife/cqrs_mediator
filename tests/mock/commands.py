@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from mediator.entities import Command
-from mediator.interfaces.handlers import ICommandHandler
+from meator.entities import Command
+from meator.interfaces.handlers import ICommandHandler
 
 
 @dataclass
