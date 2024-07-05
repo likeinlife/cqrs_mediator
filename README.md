@@ -2,7 +2,7 @@
 
 Mediator pattern impl
 
-# Docs
+[PYPI](https://pypi.org/project/meator/)
 
 [WIKI](https://github.com/likeinlife/cqrs_mediator/wiki)
 
