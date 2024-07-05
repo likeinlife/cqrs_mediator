@@ -4,6 +4,11 @@ version = "0.1.1"
 description = "Mediator pattern impl"
 authors = ["likeinlife <likeinlife@outlook.com>"]
 readme = "README.md"
+license = "MIT"
+repository = "https://github.com/likeinlife/cqrs_mediator"
+homepage = "https://github.com/likeinlife/cqrs_mediator"
+documentation = "https://github.com/likeinlife/cqrs_mediator/wiki"
+keywords = ["dispatcher", "command", "event", "query", "mediator"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
