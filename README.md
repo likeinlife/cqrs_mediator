@@ -6,6 +6,12 @@ Mediator pattern impl
 
 [WIKI](https://github.com/likeinlife/cqrs_mediator/wiki)
 
+# Installation
+
+```shell
+pip install meator
+```
+
 # Available
 
 - Dispatchers:
