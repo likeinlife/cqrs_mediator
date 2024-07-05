@@ -27,9 +27,9 @@ Mediator pattern impl
 ```python
 from dataclasses import dataclass
 
-from mediator.dispatchers import CommandDispatcherImpl
-from mediator.entities import Command
-from mediator.interfaces.handlers import ICommandHandler
+from meator.dispatchers import CommandDispatcherImpl
+from meator.entities import Command
+from meator.interfaces.handlers import ICommandHandler
 
 @dataclass
 class IntCommand(Command[int]):
@@ -53,10 +53,10 @@ async def main():
 ```python
 from dataclasses import dataclass
 
-from mediator.dispatchers import CommandDispatcherImpl
-from mediator.entities import Command, Request
-from mediator.interfaces.handlers import ICommandHandler
-from mediator.middlewares.base import Middleware
+from meator.dispatchers import CommandDispatcherImpl
+from meator.entities import Command, Request
+from meator.interfaces.handlers import ICommandHandler
+from meator.middlewares.base import Middleware
 
 
 class SimpleMiddleware(Middleware):
