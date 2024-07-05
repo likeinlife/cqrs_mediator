@@ -2,6 +2,10 @@
 
 Mediator pattern impl
 
+# Docs
+
+[WIKI](https://github.com/likeinlife/cqrs_mediator/wiki)
+
 # Available
 
 - Dispatchers:
@@ -41,7 +45,7 @@ async def main():
 
     c.register(IntCommand, IntCommandHandler())
 
-    c.handle(IntCommand(1))
+    await c.handle(IntCommand(1))
 ```
 
 ## Middleware
@@ -73,7 +77,7 @@ async def main():
 
     c.register(IntCommand, IntCommandHandler())
 
-    c.handle(IntCommand(1))
+    await c.handle(IntCommand(1))
 ```
 # Tests
 
