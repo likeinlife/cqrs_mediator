@@ -1,4 +1,5 @@
 from meator.dispatchers.base import BaseDispatcherImpl
 
 
-class QueryDispatcherImpl(BaseDispatcherImpl): ...
+class QueryDispatcherImpl(BaseDispatcherImpl):
+    """Query dispatcher."""
