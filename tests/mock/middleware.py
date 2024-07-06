@@ -1,3 +1,4 @@
+import typing as tp
 from dataclasses import dataclass
 
 from meator.entities.request import Request
@@ -10,6 +11,6 @@ from tests.mock.state import State
 class StateChangerMiddleware(IMiddleware):
     state: State
 
-    async def __call__(self, handler: IHandler, request: Request):
+    async def __call__(self, call_next: IHandler, request: Request) -> tp.Any:
         self.state.modified = True
-        return await handler(request)
+        return await call_next(request)

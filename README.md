@@ -63,11 +63,12 @@ from meator.dispatchers import CommandDispatcherImpl
 from meator.entities import Command, Request
 from meator.interfaces.handlers import ICommandHandler
 from meator.interfaces.middleware import IMiddleware
+from meator.interfaces.handlers.request import IHandler
 from meator.middlewares.base import Middleware
 
 
 class SimpleMiddleware(IMiddleware):
-    async def __call__(self, request: Request):
+    async def __call__(self, call_next: IHandler, request: Request): ...
         return await self.call_next(request)
 
 @dataclass
