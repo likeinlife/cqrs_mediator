@@ -1,14 +1,15 @@
 from dataclasses import dataclass
 
 from meator.entities.request import Request
-from meator.middlewares.base import Middleware
+from meator.interfaces.handlers.request import IHandler
+from meator.interfaces.middleware import IMiddleware
 from tests.mock.state import State
 
 
 @dataclass(eq=False)
-class StateChangerMiddleware(Middleware):
+class StateChangerMiddleware(IMiddleware):
     state: State
 
-    async def __call__(self, request: Request):
+    async def __call__(self, handler: IHandler, request: Request):
         self.state.modified = True
-        return await super().__call__(request)
+        return await handler(request)

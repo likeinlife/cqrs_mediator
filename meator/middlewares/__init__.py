@@ -14,7 +14,6 @@ class CustomMiddleware(Middleware):
 ```
 """
 
-from .base import Middleware
-from .wrap_handler import wrap_handler
+from .wrap_handler import wrap_handler_with_middleware
 
-__all__ = ("Middleware", "wrap_handler")
+__all__ = ("wrap_handler_with_middleware",)

@@ -7,8 +7,8 @@ from meator.dispatchers.errors import HandlerNotFoundError
 from meator.entities.request import Request
 from meator.interfaces.dispatcher import IDispatcher
 from meator.interfaces.handlers.request import IHandler
-from meator.middlewares import wrap_handler
-from meator.middlewares.base import Middleware
+from meator.interfaces.middleware import IMiddleware
+from meator.middlewares import wrap_handler_with_middleware
 
 Res = TypeVar("Res")
 RType = TypeVar("RType", bound=Request)
@@ -18,21 +18,21 @@ class BaseDispatcherImpl(IDispatcher):
     def __init__(
         self,
         *,
-        middlewares: tp.Sequence[Middleware] = _sentinel,
+        middlewares: tp.Sequence[IMiddleware] = _sentinel,
         handlers: dict[type[Request], IHandler] = _sentinel,
     ) -> None:
         self._middlewares = get_default_sentinel(middlewares, [])
         self._handlers = get_default_sentinel(handlers, {})
 
     def register(self, request: type[RType], handler: IHandler[RType, Res]) -> None:
-        self._handlers[request] = wrap_handler(self._middlewares, handler)
+        self._handlers[request] = handler
 
     async def handle(self, request: Request[Res]) -> Res:
-        handler = self._get_handler(request)
-        return await handler(request)
+        handler = self._get_handler(type(request))
+        return await wrap_handler_with_middleware(self._middlewares, handler)(request)
 
-    def _get_handler(self, request: Request[Res]) -> IHandler[Request[Res], Res]:
-        if (r_type := type(request)) not in self._handlers:
-            raise HandlerNotFoundError(r_type)
+    def _get_handler(self, request_type: type[Request[Res]]) -> IHandler[Request[Res], Res]:
+        if request_type not in self._handlers:
+            raise HandlerNotFoundError(request_type)
 
-        return self._handlers[r_type]
+        return self._handlers[request_type]
