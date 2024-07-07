@@ -69,7 +69,7 @@ from meator.middlewares.base import Middleware
 
 class SimpleMiddleware(IMiddleware):
     async def __call__(self, call_next: IHandler, request: Request): ...
-        return await self.call_next(request)
+        return await call_next(request)
 
 @dataclass
 class IntCommand(Command[int]):
