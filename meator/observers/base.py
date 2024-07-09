@@ -7,10 +7,11 @@ from meator.entities.request import Request
 from meator.interfaces.handlers.request import IHandler
 from meator.interfaces.middleware import IMiddleware
 from meator.interfaces.observer import IObserver
-from meator.middlewares import wrap_handler
+from meator.interfaces.types import CallNextType
+from meator.middlewares import wrap_handler_with_middleware
 
 Res = TypeVar("Res")
-Req = TypeVar("Req", bound=Request)
+RType = TypeVar("RType", bound=Request)
 
 
 class BaseObserverImpl(IObserver):
@@ -18,18 +19,18 @@ class BaseObserverImpl(IObserver):
         self,
         *,
         middlewares: tp.Sequence[IMiddleware] = _sentinel,
-        handlers: dict[type[Request], tp.Sequence[IHandler]] = _sentinel,
+        handlers: dict[type[Request], tp.Sequence[CallNextType[Request, tp.Any]]] = _sentinel,
     ) -> None:
         self._middlewares = get_default_sentinel(middlewares, ())
         self._handlers = get_default_sentinel(handlers, {})
 
-    def register(self, request: type[Req], handlers: tp.Sequence[IHandler[Req, Res]]) -> None:
-        self._handlers[request] = handlers
+    def register(self, request: type[RType], handlers: tp.Sequence[IHandler[RType, Res]]) -> None:
+        self._handlers[request] = [wrap_handler_with_middleware(self._middlewares, handler) for handler in handlers]
 
     async def handle(self, request: Request[None]) -> None:
         handlers = self._get_handler(request)
         for handler in handlers:
-            await wrap_handler.wrap_handler_with_middleware(self._middlewares, handler)(request)
+            await handler(request)
 
-    def _get_handler(self, request: Request[Res]) -> tp.Sequence[IHandler[Request, Res]]:
+    def _get_handler(self, request: Request[Res]) -> tp.Sequence[CallNextType[Request, Res]]:
         return self._handlers.get(type(request), ())

@@ -1,10 +1,8 @@
 import typing as tp
 
-if tp.TYPE_CHECKING:
-    from meator.entities import Request
-    from meator.interfaces.handlers import IHandler
-    from meator.interfaces.middleware import IMiddleware
+from meator.entities import Request
 
-T = tp.TypeVar("T")
+Res = tp.TypeVar("Res")
+ReqType = tp.TypeVar("ReqType", bound=Request)
 
-CallNextType: tp.TypeAlias = "IHandler[Request, T] | IMiddleware"
+CallNextType: tp.TypeAlias = tp.Callable[[ReqType], tp.Awaitable[Res]]
