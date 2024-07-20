@@ -6,9 +6,9 @@ authors = ["likeinlife <likeinlife@outlook.com>"]
 readme = "README.md"
 license = "MIT"
 repository = "https://github.com/likeinlife/cqrs_mediator"
-homepage = "https://github.com/likeinlife/cqrs_mediator"
+homepage = "https://pypi.org/project/meator/"
 documentation = "https://github.com/likeinlife/cqrs_mediator/wiki"
-keywords = ["dispatcher", "command", "event", "query", "mediator"]
+keywords = ["dispatcher", "command", "event", "query", "mediator", "cqrs"]
 
 [tool.poetry.dependencies]
 python = "^3.11"

@@ -1,4 +1,4 @@
-# Description
+# Meator
 
 [![image](https://img.shields.io/pypi/v/meator.svg)](https://pypi.python.org/pypi/meator)
 <a href="http://mypy-lang.org/" target="_blank"><img src="https://img.shields.io/badge/mypy-checked-1F5082.svg" alt="Mypy checked"></a>
@@ -6,7 +6,7 @@
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![image](https://img.shields.io/pypi/pyversions/meator.svg)](https://pypi.python.org/pypi/meator)
 
-Mediator pattern python implementation.
+Python CQRS pattern implementation.
 
 [**Docs**](https://github.com/likeinlife/cqrs_mediator/wiki)
 
