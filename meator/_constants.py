@@ -1,3 +1,3 @@
 import typing as tp
 
-_sentinel: tp.Final[tp.Any] = object()
+_UNSET: tp.Final[tp.Any] = object()

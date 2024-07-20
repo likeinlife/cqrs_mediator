@@ -1,7 +1,7 @@
 import typing as tp
 from typing import TypeVar
 
-from meator._constants import _sentinel
+from meator._constants import _UNSET
 from meator._utils.sentinel_default import get_default_sentinel
 from meator.entities.request import Request
 from meator.interfaces.handlers.request import IHandler
@@ -18,8 +18,8 @@ class BaseObserverImpl(IObserver):
     def __init__(
         self,
         *,
-        middlewares: tp.Sequence[IMiddleware] = _sentinel,
-        handlers: dict[type[Request], tp.Sequence[CallNextType[Request, tp.Any]]] = _sentinel,
+        middlewares: tp.Sequence[IMiddleware] = _UNSET,
+        handlers: dict[type[Request], tp.Sequence[CallNextType[Request, tp.Any]]] = _UNSET,
     ) -> None:
         self._middlewares = get_default_sentinel(middlewares, ())
         self._handlers = get_default_sentinel(handlers, {})

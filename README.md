@@ -1,10 +1,14 @@
 # Description
 
-Mediator pattern impl
+[![image](https://img.shields.io/pypi/v/meator.svg)](https://pypi.python.org/pypi/meator)
+<a href="http://mypy-lang.org/" target="_blank"><img src="https://img.shields.io/badge/mypy-checked-1F5082.svg" alt="Mypy checked"></a>
+[![image](https://img.shields.io/pypi/l/meator.svg)](https://github.com/likeinlife/cqrs_mediator/blob/main/LICENSE)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![image](https://img.shields.io/pypi/pyversions/meator.svg)](https://pypi.python.org/pypi/meator)
 
-[PYPI](https://pypi.org/project/meator/)
+Mediator pattern python implementation.
 
-[WIKI](https://github.com/likeinlife/cqrs_mediator/wiki)
+[**Docs**](https://github.com/likeinlife/cqrs_mediator/wiki)
 
 # Installation
 

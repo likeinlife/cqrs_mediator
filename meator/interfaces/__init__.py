@@ -1,9 +1,9 @@
 """Interfaces package."""
 
-from .dispatcher import IDispatcher
+from .dispatcher import ICommandDispatcher, IDispatcher, IQueryDispatcher
 from .handlers import ICommandHandler, IEventHandler, IHandler, IQueryHandler
 from .middleware import IMiddleware
-from .observer import IObserver
+from .observer import IEventObserver, IObserver
 
 __all__ = (
     "IDispatcher",
@@ -13,4 +13,7 @@ __all__ = (
     "IEventHandler",
     "IHandler",
     "IQueryHandler",
+    "ICommandDispatcher",
+    "IQueryDispatcher",
+    "IEventObserver",
 )
