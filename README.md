@@ -2,6 +2,7 @@
 
 [![image](https://img.shields.io/pypi/v/meator.svg)](https://pypi.python.org/pypi/meator)
 <a href="http://mypy-lang.org/" target="_blank"><img src="https://img.shields.io/badge/mypy-checked-1F5082.svg" alt="Mypy checked"></a>
+[![codecov](https://codecov.io/gh/likeinlife/cqrs_mediator/graph/badge.svg?token=BVDRFQ61R6)](https://codecov.io/gh/likeinlife/cqrs_mediator)
 [![image](https://img.shields.io/pypi/l/meator.svg)](https://github.com/likeinlife/cqrs_mediator/blob/main/LICENSE)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![image](https://img.shields.io/pypi/pyversions/meator.svg)](https://pypi.python.org/pypi/meator)
