@@ -1,19 +1,9 @@
-"""Dispatchers package.
-
-Available:
-    - Command
-    - Query
-    - Base
-
-Base is useful for creating own dispatcher.
-"""
-
-from .base import BaseDispatcherImpl
+from .base import DispatcherImpl
 from .command import CommandDispatcherImpl
 from .query import QueryDispatcherImpl
 
 __all__ = (
-    "BaseDispatcherImpl",
+    "DispatcherImpl",
     "CommandDispatcherImpl",
     "QueryDispatcherImpl",
 )

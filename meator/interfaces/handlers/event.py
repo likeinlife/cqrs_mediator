@@ -2,9 +2,9 @@ import typing as tp
 
 from meator.entities import Event
 
-from .request import IHandler
+from .request import Handler
 
 EType = tp.TypeVar("EType", bound=Event)
 
 
-class IEventHandler(IHandler[EType, None]): ...
+class EventHandler(Handler[EType, None]): ...

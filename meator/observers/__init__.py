@@ -1,13 +1,4 @@
-"""Observers package.
-
-Available:
-    - Event
-    - Base
-
-Base is useful for creating own observer.
-"""
-
-from .base import BaseObserverImpl
+from .base import ObserverImpl
 from .event import EventObserverImpl
 
-__all__ = ("BaseObserverImpl", "EventObserverImpl")
+__all__ = ("ObserverImpl", "EventObserverImpl")

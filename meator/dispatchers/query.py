@@ -1,6 +1,6 @@
-from meator.dispatchers.base import BaseDispatcherImpl
-from meator.interfaces import IQueryDispatcher
+from meator.dispatchers.base import DispatcherImpl
+from meator.interfaces import QueryDispatcher
 
 
-class QueryDispatcherImpl(BaseDispatcherImpl, IQueryDispatcher):
+class QueryDispatcherImpl(DispatcherImpl, QueryDispatcher):
     """Query dispatcher."""

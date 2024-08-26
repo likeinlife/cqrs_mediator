@@ -1,4 +1,4 @@
-from .interface import IDispatcher
+from .interface import Dispatcher
 
 
-class ICommandDispatcher(IDispatcher): ...
+class CommandDispatcher(Dispatcher): ...

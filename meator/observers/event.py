@@ -1,5 +1,5 @@
-from meator.interfaces import IEventObserver
-from meator.observers.base import BaseObserverImpl
+from meator.interfaces import EventObserver
+from meator.observers.base import ObserverImpl
 
 
-class EventObserverImpl(BaseObserverImpl, IEventObserver): ...
+class EventObserverImpl(ObserverImpl, EventObserver): ...

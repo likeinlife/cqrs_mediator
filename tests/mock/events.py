@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 from meator.entities import Event
-from meator.interfaces.handlers import IEventHandler
+from meator.interfaces.handlers import EventHandler
 from tests.mock.state import State
 
 
@@ -11,7 +11,7 @@ class IntEvent(Event):
 
 
 @dataclass
-class IntEventHandler(IEventHandler[IntEvent]):
+class IntEventHandler(EventHandler[IntEvent]):
     state: State
 
     async def __call__(self, request: IntEvent) -> None:  # noqa: ARG002

@@ -1,4 +1,4 @@
-from .interface import IObserver
+from .interface import Observer
 
 
-class IEventObserver(IObserver): ...
+class EventObserver(Observer): ...

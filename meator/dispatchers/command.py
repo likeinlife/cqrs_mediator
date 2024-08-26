@@ -1,6 +1,6 @@
-from meator.dispatchers.base import BaseDispatcherImpl
-from meator.interfaces import ICommandDispatcher
+from meator.dispatchers.base import DispatcherImpl
+from meator.interfaces import CommandDispatcher
 
 
-class CommandDispatcherImpl(BaseDispatcherImpl, ICommandDispatcher):
+class CommandDispatcherImpl(DispatcherImpl, CommandDispatcher):
     """Command dispatcher."""
