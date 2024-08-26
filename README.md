@@ -28,8 +28,7 @@ pip install meator
     - Command
     - Event
     - Query
-- Middlewares:
-  - Middleware
+- Middlewares
 
 # Usecases
 
