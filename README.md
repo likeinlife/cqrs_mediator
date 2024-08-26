@@ -39,16 +39,18 @@ from dataclasses import dataclass
 
 from meator.dispatchers import CommandDispatcherImpl
 from meator.entities import Command
-from meator.interfaces.handlers import ICommandHandler
+from meator.interfaces import CommandHandler
+
 
 @dataclass
 class IntCommand(Command[int]):
     answer: int
 
 
-class IntCommandHandler(ICommandHandler[IntCommand, int]):
+class IntCommandHandler(CommandHandler[IntCommand, int]):
     async def __call__(self, request: IntCommand) -> int:
         return request.answer
+
 
 async def main():
     c = CommandDispatcherImpl()
@@ -56,6 +58,7 @@ async def main():
     c.register(IntCommand, IntCommandHandler())
 
     await c.handle(IntCommand(1))
+
 ```
 
 ## Middleware
@@ -65,27 +68,26 @@ from dataclasses import dataclass
 
 from meator.dispatchers import CommandDispatcherImpl
 from meator.entities import Command, Request
-from meator.interfaces.handlers import ICommandHandler
-from meator.interfaces.middleware import IMiddleware
-from meator.interfaces.handlers.request import IHandler
-from meator.middlewares.base import Middleware
+from meator.interfaces import CommandHandler, Handler, Middleware
 
 
-class SimpleMiddleware(IMiddleware):
-    async def __call__(self, call_next: IHandler, request: Request): ...
+class SimpleMiddleware(Middleware):
+    async def __call__(self, call_next: Handler, request: Request):
         return await call_next(request)
+
 
 @dataclass
 class IntCommand(Command[int]):
     answer: int
 
 
-class IntCommandHandler(ICommandHandler[IntCommand, int]):
+class IntCommandHandler(CommandHandler[IntCommand, int]):
     async def __call__(self, request: IntCommand) -> int:
         return request.answer
 
+
 async def main():
-    c = CommandDispatcherImpl(middlewares=[SimpleMiddleware])
+    c = CommandDispatcherImpl(middlewares=[SimpleMiddleware()])
 
     c.register(IntCommand, IntCommandHandler())
 

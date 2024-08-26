@@ -7,7 +7,7 @@ from meator.dispatchers.errors import HandlerNotFoundError
 from meator.entities.request import Request
 from meator.interfaces.dispatcher import Dispatcher
 from meator.interfaces.handlers.request import Handler
-from meator.interfaces.middleware import IMiddleware
+from meator.interfaces.middleware import Middleware
 from meator.interfaces.types import CallNextType
 from meator.middlewares import wrap_handler_with_middleware
 
@@ -19,7 +19,7 @@ class DispatcherImpl(Dispatcher):
     def __init__(
         self,
         *,
-        middlewares: tp.Sequence[IMiddleware] = _UNSET,
+        middlewares: tp.Sequence[Middleware] = _UNSET,
         handlers: dict[type[Request], CallNextType[Request, tp.Any]] = _UNSET,
     ) -> None:
         self._middlewares = get_default_sentinel(middlewares, [])

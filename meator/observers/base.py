@@ -5,7 +5,7 @@ from meator._constants import _UNSET
 from meator._utils.sentinel_default import get_default_sentinel
 from meator.entities.request import Request
 from meator.interfaces.handlers.request import Handler
-from meator.interfaces.middleware import IMiddleware
+from meator.interfaces.middleware import Middleware
 from meator.interfaces.observer import Observer
 from meator.interfaces.types import CallNextType
 from meator.middlewares import wrap_handler_with_middleware
@@ -18,7 +18,7 @@ class ObserverImpl(Observer):
     def __init__(
         self,
         *,
-        middlewares: tp.Sequence[IMiddleware] = _UNSET,
+        middlewares: tp.Sequence[Middleware] = _UNSET,
         handlers: dict[type[Request], tp.Sequence[CallNextType[Request, tp.Any]]] = _UNSET,
     ) -> None:
         self._middlewares = get_default_sentinel(middlewares, ())
