@@ -1,6 +1,6 @@
-from .command import ICommandHandler
-from .event import IEventHandler
-from .query import IQueryHandler
-from .request import IHandler
+from .command import CommandHandler
+from .event import EventHandler
+from .query import QueryHandler
+from .request import Handler
 
-__all__ = ("ICommandHandler", "IQueryHandler", "IEventHandler", "IHandler")
+__all__ = ("CommandHandler", "QueryHandler", "EventHandler", "Handler")

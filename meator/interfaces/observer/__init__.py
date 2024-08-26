@@ -1,7 +1,7 @@
-from .event import IEventObserver
-from .interface import IObserver
+from .event import EventObserver
+from .interface import Observer
 
 __all__ = (
-    "IEventObserver",
-    "IObserver",
+    "EventObserver",
+    "Observer",
 )

@@ -1,9 +1,9 @@
-from .command import ICommandDispatcher
-from .interface import IDispatcher
-from .query import IQueryDispatcher
+from .command import CommandDispatcher
+from .interface import Dispatcher
+from .query import QueryDispatcher
 
 __all__ = (
-    "ICommandDispatcher",
-    "IQueryDispatcher",
-    "IDispatcher",
+    "CommandDispatcher",
+    "QueryDispatcher",
+    "Dispatcher",
 )

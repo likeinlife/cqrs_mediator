@@ -1,4 +1,4 @@
-from .interface import IDispatcher
+from .interface import Dispatcher
 
 
-class IQueryDispatcher(IDispatcher): ...
+class QueryDispatcher(Dispatcher): ...

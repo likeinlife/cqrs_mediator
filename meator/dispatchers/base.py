@@ -5,8 +5,8 @@ from meator._constants import _UNSET
 from meator._utils.sentinel_default import get_default_sentinel
 from meator.dispatchers.errors import HandlerNotFoundError
 from meator.entities.request import Request
-from meator.interfaces.dispatcher import IDispatcher
-from meator.interfaces.handlers.request import IHandler
+from meator.interfaces.dispatcher import Dispatcher
+from meator.interfaces.handlers.request import Handler
 from meator.interfaces.middleware import IMiddleware
 from meator.interfaces.types import CallNextType
 from meator.middlewares import wrap_handler_with_middleware
@@ -15,7 +15,7 @@ Res = TypeVar("Res")
 RType = TypeVar("RType", bound=Request)
 
 
-class BaseDispatcherImpl(IDispatcher):
+class DispatcherImpl(Dispatcher):
     def __init__(
         self,
         *,
@@ -25,7 +25,7 @@ class BaseDispatcherImpl(IDispatcher):
         self._middlewares = get_default_sentinel(middlewares, [])
         self._handlers = get_default_sentinel(handlers, {})
 
-    def register(self, request: type[RType], handler: IHandler[RType, Res]) -> None:
+    def register(self, request: type[RType], handler: Handler[RType, Res]) -> None:
         self._handlers[request] = wrap_handler_with_middleware(self._middlewares, handler)
 
     async def handle(self, request: Request[Res]) -> Res:
